@@ -10,14 +10,14 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_EXTENSIONS ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-if(SELF_TEST_ENABLE)
+if(NOT TARGET dxt_common AND SELF_TEST_ENABLE)
     execute_process(
         COMMAND git clone https://github.com/drivextech/dxt_common
         WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
     add_subdirectory(${PROJECT_SOURCE_DIR}/dxt_common)
     include_directories(${PROJECT_SOURCE_DIR}/dxt_common)
 endif()
-unset(USE_MY_LIB CACHE)
+unset(SELF_TEST_ENABLE CACHE)
 
 
 include_directories(${PROJECT_SOURCE_DIR})
