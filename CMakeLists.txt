@@ -13,9 +13,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 if(SELF_TEST_ENABLE)
     execute_process(
         COMMAND git clone https://github.com/drivextech/dxt_common
-        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/Thirdparty)
-    add_subdirectory(Thirdparty/dxt_common)
-    include_directories(Thirdparty/dxt_common)
+        WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
+    add_subdirectory(${PROJECT_SOURCE_DIR}/dxt_common)
+    include_directories(${PROJECT_SOURCE_DIR}/dxt_common)
 endif()
 unset(USE_MY_LIB CACHE)
 
