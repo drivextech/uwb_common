@@ -6,10 +6,6 @@ option(SELF_TEST_ENABLE "If is standalone project? (not part of some project)" O
 include(CTest)
 enable_testing()
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_EXTENSIONS ON)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 if(NOT TARGET dxt_common AND SELF_TEST_ENABLE)
     execute_process(
         COMMAND git clone https://github.com/drivextech/dxt_common
