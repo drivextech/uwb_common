@@ -9,11 +9,15 @@
 #include "types/uwb_types.h"
 
 
-
 #ifdef UWB_PHY_EXTENDED
     #define UWB_FRMAE_MAX_LENGTH 1023
 #else
     #define UWB_FRMAE_MAX_LENGTH (128 - 1)
+#endif
+
+
+#ifdef __cplusplus
+extern "C" {
 #endif
 
 
@@ -75,5 +79,9 @@ void mac_frame_init_acknowledgement(mac_frame_t* ptr_mac_frame);
 void mac_frame_init_command_global(mac_frame_t* ptr_mac_frame, uwb_addr_t* src_addr, uwb_addr_t* dest_addr, uwb_pan_id_t* src_pan_id, uwb_pan_id_t* dest_pan_id);
 void mac_frame_init_command_local(mac_frame_t* ptr_mac_frame, uwb_addr_t* src_addr, uwb_addr_t* dest_addr, uwb_pan_id_t* pan_id);
 
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

@@ -18,7 +18,7 @@ unset(SELF_TEST_ENABLE CACHE)
 
 include_directories(${PROJECT_SOURCE_DIR})
 
-add_library(uwb_common
+add_library(uwb_common STATIC
     mac_frame/mac_frame.c)
 target_link_libraries(uwb_common dxt_common)
 add_dependencies(uwb_common dxt_common)
