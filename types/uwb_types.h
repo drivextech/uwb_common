@@ -6,11 +6,13 @@
 #ifndef _UWB_TYPES_H_
 #define _UWB_TYPES_H_
 
+#include "types/types.h"
+
 #ifdef __cplusplus
+namespace dxt_common {
 extern "C" {
 #endif
 
-#include "types/types.h"
 
 typedef union _uwb_pan_id_t {
     UINT16 id2;
@@ -26,6 +28,7 @@ typedef union _uwb_addr_t {
 } uwb_addr_t;
 
 #ifdef __cplusplus
+}
 }
 #endif
 
