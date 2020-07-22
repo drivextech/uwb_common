@@ -29,7 +29,21 @@ typedef union _uwb_addr_t {
 
 #ifdef __cplusplus
 }
+
 }
 #endif
+
+
+
+#ifdef __cplusplus
+namespace std
+{
+inline bool operator<(const dxt_common::uwb_addr_t& addr1, const dxt_common::uwb_addr_t& addr2)
+{
+    return addr1.addr2 < addr2.addr2;
+}
+}
+#endif
+
 
 #endif
